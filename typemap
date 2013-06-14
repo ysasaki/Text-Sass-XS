@@ -1,0 +1,5 @@
+TYPEMAP
+struct sass_options*           T_PTRREF
+struct sass_context*           T_PTRREF
+struct sass_file_context*      T_PTRREF
+struct sass_folder_context*    T_PTRREF
