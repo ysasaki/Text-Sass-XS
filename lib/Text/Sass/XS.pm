@@ -2,11 +2,24 @@ package Text::Sass::XS;
 use 5.008005;
 use strict;
 use warnings;
+use base 'Exporter';
 
 our $VERSION = "0.01";
 
+my @constants = qw(
+    SASS_STYLE_NESTED
+    SASS_STYLE_EXPANDED
+    SASS_STYLE_COMPACT
+    SASS_STYLE_COMPRESSED
+    SASS_SOURCE_COMMENTS_NONE
+    SASS_SOURCE_COMMENTS_DEFAULT
+    SASS_SOURCE_COMMENTS_MAP
+);
+our @EXPORT_OK = @constants;
+our %EXPORT_TAGS = ( 'const' => \@constants );
+
 use XSLoader;
-XSLoader::load(__PACKAGE__, $VERSION);
+XSLoader::load( __PACKAGE__, $VERSION );
 
 1;
 __END__

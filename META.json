@@ -4,7 +4,7 @@
       "ysasaki <ysasaki@idac.co.jp>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.2, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Minilla/v0.4.9, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],
@@ -46,10 +46,14 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Name::FromLine" : "0.10"
          }
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "version" : "0.01",
+   "x_contributors" : [
+      "ysasaki <ysasaki@cpan.org>"
+   ]
 }

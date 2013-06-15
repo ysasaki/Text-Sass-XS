@@ -9,7 +9,7 @@ use strict;
 use warnings;
 use utf8;
 
-use Module::Build;
+use builder::MyBuilder;
 use File::Basename;
 use File::Spec;
 use CPAN::Meta;
@@ -36,16 +36,16 @@ if (-d 'share') {
     $args{share_dir} = 'share';
 }
 
-my $builder = Module::Build->subclass(
+my $builder = builder::MyBuilder->subclass(
     class => 'MyBuilder',
     code => q{
-        sub new {
-            my ($self, %args) = @_;
-            $self->SUPER::new(
-                %args,
-                extra_linker_flags => ['-lsass'],
-            );
-        }
+sub new {
+    my ($self, %args) = @_;
+    $self->SUPER::new(
+        %args,
+        extra_linker_flags => ['-lsass'],
+    );
+}
 
         sub ACTION_distmeta {
             die "Do not run distmeta. Install Minilla and `minil install` instead.\n";
