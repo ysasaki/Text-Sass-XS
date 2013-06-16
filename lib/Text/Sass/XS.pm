@@ -172,6 +172,8 @@ it under the same terms as Perl itself.
 
 L<Text::Sass>
 
+L<CSS::Sass>
+
 =head1 AUTHOR
 
 Yoshihiro Sasaki E<lt>ysasaki@cpan.orgE<gt>
