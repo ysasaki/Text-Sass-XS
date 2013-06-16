@@ -4,7 +4,7 @@
       "Yoshihiro Sasaki."
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.4.9, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Minilla/v0.5.3, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],

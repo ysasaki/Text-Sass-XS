@@ -88,8 +88,8 @@ compile(source_string, options=NULL)
 PREINIT:
     char* output_string;
     char* error_message;
-INIT:
     struct sass_context* context = sass_new_context();
+INIT:
     context->source_string = source_string;
     context->output_string = output_string;
     set_options(context, options);
@@ -104,6 +104,8 @@ CODE:
     sass_free_context(context);
 OUTPUT:
     RETVAL
+CEANUP:
+    sass_free_context(context);
 
 
 char*
@@ -113,8 +115,8 @@ compile_file(input_path, options=NULL)
 PREINIT:
     char* output_string;
     char* error_message;
-INIT:
     struct sass_file_context* context = sass_new_file_context();
+INIT:
     context->input_path    = input_path;
     context->output_string = output_string;
     set_options(context, options);
@@ -126,6 +128,7 @@ CODE:
         Perl_croak(aTHX_ "%s", error_message);
     }
     RETVAL = context->output_string;
-    sass_free_file_context(context);
 OUTPUT:
     RETVAL
+CEANUP:
+    sass_free_file_context(context);
