@@ -82,7 +82,9 @@ Text::Sass::XS - Perl Binding for libsass
 
 Text::Sass::XS is a Perl Binding for libsass.
 
-libsass https://github.com/hcatlin/libsass
+L<libsass Project page|https://github.com/hcatlin/libsass>
+
+L<CSS::Sass> is also using libsass. But CSS::Sass v0.1.0 and v0.2.0 are both broken.
 
 =head1 EXPORT
 
@@ -161,18 +163,26 @@ Exports :func and :const.
 
 =back
 
+=head1 SEE ALSO
+
+L<Text::Sass>
+
+L<CSS::Sass>
+
 =head1 LICENSE
+
+=head2 Text::Sass::XS
 
 Copyright (C) 2013 Yoshihiro Sasaki.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=head1 SEE ALSO
+=head2 libsass
 
-L<Text::Sass>
+Copyright (C) 2012 by Hampton Catlin.
 
-L<CSS::Sass>
+See libsass/LICENSE for more details.
 
 =head1 AUTHOR
 
