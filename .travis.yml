@@ -7,5 +7,4 @@ perl:
 before_install:
   - "git clone git://github.com/hcatlin/libsass.git"
   - "cd libsass && ./configure && make && sudo make install"
-after_failure: 
- - "cat /home/travis/.cpanm/build.log"
+after_failure: "cat /home/travis/.cpanm/build.log"
