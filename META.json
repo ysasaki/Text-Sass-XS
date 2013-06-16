@@ -1,7 +1,7 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Perl Binding for libsass",
    "author" : [
-      "ysasaki <ysasaki@idac.co.jp>"
+      "Yoshihiro Sasaki."
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v0.4.9, CPAN::Meta::Converter version 2.131560",
@@ -54,6 +54,7 @@
    "release_status" : "unstable",
    "version" : "0.01",
    "x_contributors" : [
-      "ysasaki <ysasaki@cpan.org>"
+      "ysasaki <ysasaki@cpan.org>",
+      "ysasaki <aloelight@gmail.com>"
    ]
 }
