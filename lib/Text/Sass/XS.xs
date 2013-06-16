@@ -101,7 +101,6 @@ CODE:
         Perl_croak(aTHX_ "%s", error_message);
     }
     RETVAL = context->output_string;
-    sass_free_context(context);
 OUTPUT:
     RETVAL
 CEANUP:
