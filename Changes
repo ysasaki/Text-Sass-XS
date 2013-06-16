@@ -1,6 +1,7 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+    - Uses g++ to compile xs instead of cc.
 
 0.01 2013-06-16T11:36:59Z
 
