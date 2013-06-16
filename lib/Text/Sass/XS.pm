@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base 'Exporter';
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 my @constants = qw(
     SASS_STYLE_NESTED

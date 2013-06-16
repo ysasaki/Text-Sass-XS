@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.02 2013-06-16T13:52:56Z
     - Uses g++ to compile xs instead of cc.
     - Updates POD.
 
