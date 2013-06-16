@@ -4,8 +4,6 @@ perl:
   - 5.12
   - 5.14
   - 5.16
-before_install:
- -  "git submodule update --init --recursive"
 install:
   - "cpanm --installdeps --notest . || cat ~/.cpanm/build.log"
 after_failure: 
