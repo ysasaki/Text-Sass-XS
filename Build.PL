@@ -39,14 +39,6 @@ if (-d 'share') {
 my $builder = builder::MyBuilder->subclass(
     class => 'MyBuilder',
     code => q{
-sub new {
-    my ($self, %args) = @_;
-    $self->SUPER::new(
-        %args,
-        extra_linker_flags => ['-lsass'],
-    );
-}
-
         sub ACTION_distmeta {
             die "Do not run distmeta. Install Minilla and `minil install` instead.\n";
         }

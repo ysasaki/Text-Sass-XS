@@ -20,7 +20,8 @@
          "inc",
          "share",
          "eg",
-         "builder"
+         "builder",
+         "libsass"
       ]
    },
    "prereqs" : {
