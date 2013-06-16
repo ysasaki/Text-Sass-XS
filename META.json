@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/ysasaki/Text-Sass-XS/issues"
+      },
+      "homepage" : "https://github.com/ysasaki/Text-Sass-XS",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/ysasaki/Text-Sass-XS.git",
+         "web" : "https://github.com/ysasaki/Text-Sass-XS"
+      }
+   },
    "version" : "0.01",
    "x_contributors" : [
       "ysasaki <ysasaki@cpan.org>",

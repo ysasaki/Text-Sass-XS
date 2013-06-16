@@ -75,10 +75,15 @@ None.
 
 ## Constants
 
+For `$options->{output_style}`.
+
 - SASS\_STYLE\_NESTED
 - SASS\_STYLE\_EXPANDED
 - SASS\_STYLE\_COMPACT
 - SASS\_STYLE\_COMPRESSED
+
+For `$options->{source_comments}`.
+
 - SASS\_SOURCE\_COMMENTS\_NONE
 - SASS\_SOURCE\_COMMENTS\_DEFAULT
 - SASS\_SOURCE\_COMMENTS\_MAP
@@ -107,6 +112,8 @@ it under the same terms as Perl itself.
 # SEE ALSO
 
 [Text::Sass](http://search.cpan.org/perldoc?Text::Sass)
+
+[CSS::Sass](http://search.cpan.org/perldoc?CSS::Sass)
 
 # AUTHOR
 
