@@ -103,7 +103,7 @@ CODE:
     RETVAL = context->output_string;
 OUTPUT:
     RETVAL
-CEANUP:
+CLEANUP:
     sass_free_context(context);
 
 
@@ -129,5 +129,5 @@ CODE:
     RETVAL = context->output_string;
 OUTPUT:
     RETVAL
-CEANUP:
+CLEANUP:
     sass_free_file_context(context);
