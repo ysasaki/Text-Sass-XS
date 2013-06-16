@@ -5,4 +5,4 @@ perl:
   - 5.16
 before_install:
   - "git clone git://github.com/hcatlin/libsass.git"
-  - "cd libsass && ./configure && make && make install"
+  - "cd libsass && ./configure && make && sudo make install"
