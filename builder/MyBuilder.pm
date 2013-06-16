@@ -7,8 +7,11 @@ sub new {
     my ( $self, %args ) = @_;
     $self->SUPER::new(
         %args,
-        extra_compiler_flags => [ '-x' => 'c++' ],
-        c_source             => ['libsass'],
+        c_source => ['libsass'],
+        config   => {
+            cc => 'g++',
+            ld => 'g++',
+        }
     );
 }
 
