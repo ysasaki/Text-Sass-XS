@@ -18,6 +18,13 @@ extern "C" {
 #define _CONST(name) \
     newCONSTSUB(stash, #name, newSViv(name))
 
+#define hv_store_text_string(hv, key, val) \
+    hv_store((hv), (key), strlen((key)), \
+          (val) \
+        ? newSVpvn_utf8((val), strlen((val)), 1) \
+        : &PL_sv_undef, \
+        0 );
+
 static int hv_fetch_iv(pTHX_ HV* dict, const char* key) {
     if (!hv_exists(dict, key, strlen(key))) {
         return 0;
@@ -81,8 +88,8 @@ BOOT:
     _CONST(SASS_SOURCE_COMMENTS_MAP);
 }
 
-char*
-compile(source_string, options=NULL)
+HV*
+_compile(source_string, options=NULL)
     const char* source_string;
     HV* options;
 PREINIT:
@@ -94,21 +101,19 @@ INIT:
     context->output_string = output_string;
     set_options(context, options);
 CODE:
+    RETVAL = newHV();
     sass_compile(context);
-    if ( context->error_status ) {
-        error_message = context->error_message;
-        sass_free_context(context);
-        Perl_croak(aTHX_ "%s", error_message);
-    }
-    RETVAL = context->output_string;
+    hv_store_text_string(RETVAL, "output_string", context->output_string);
+    hv_store_text_string(RETVAL, "error_message", context->error_message);
+    hv_store(RETVAL, "error_status", strlen("error_status"), newSViv(context->error_status), 0);
 OUTPUT:
     RETVAL
 CLEANUP:
     sass_free_context(context);
 
 
-char*
-compile_file(input_path, options=NULL)
+HV*
+_compile_file(input_path, options=NULL)
     char* input_path;
     HV* options;
 PREINIT:
@@ -120,13 +125,11 @@ INIT:
     context->output_string = output_string;
     set_options(context, options);
 CODE:
+    RETVAL = newHV();
     sass_compile_file(context);
-    if ( context->error_status ) {
-        error_message = context->error_message;
-        sass_free_file_context(context);
-        Perl_croak(aTHX_ "%s", error_message);
-    }
-    RETVAL = context->output_string;
+    hv_store_text_string(RETVAL, "output_string", context->output_string);
+    hv_store_text_string(RETVAL, "error_message", context->error_message);
+    hv_store(RETVAL, "error_status", strlen("error_status"), newSViv(context->error_status), 0);
 OUTPUT:
     RETVAL
 CLEANUP:

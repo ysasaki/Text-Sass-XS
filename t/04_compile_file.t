@@ -14,6 +14,7 @@ my $options = {
     include_paths   => undef,
     image_path      => undef,
 };
+
 my $css = sass_compile_file( $sass, $options );
 is $css, <<'CSS', 'compile_file with options';
 .content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}

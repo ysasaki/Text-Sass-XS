@@ -28,7 +28,7 @@ SASS
     my $options = {
         output_style    => SASS_STYLE_COMPRESSED,
         source_comments => SASS_SOURCE_COMMENTS_NONE,
-        include_paths   => 't/assets:t/another-assets',
+        include_paths   => ['t/assets','t/another-assets'],
         image_path      => '/images',
     };
     my $css = sass_compile( $sass, $options );
