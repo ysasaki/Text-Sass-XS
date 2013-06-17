@@ -64,7 +64,7 @@
          "web" : "https://github.com/ysasaki/Text-Sass-XS"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "ysasaki <ysasaki@cpan.org>",
       "ysasaki <aloelight@gmail.com>"
