@@ -21,7 +21,8 @@
          "share",
          "eg",
          "builder",
-         "libsass"
+         "libsass",
+         "author_scripts"
       ]
    },
    "prereqs" : {
