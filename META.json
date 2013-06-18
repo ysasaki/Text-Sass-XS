@@ -29,6 +29,7 @@
          "requires" : {
             "CPAN::Meta" : "0",
             "CPAN::Meta::Prereqs" : "0",
+            "ExtUtils::CBuilder" : "0.28",
             "Module::Build" : "0.38"
          }
       },
