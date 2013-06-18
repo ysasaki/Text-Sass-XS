@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.06 2013-06-18T09:23:39Z
     - Adds Text::Sass compatible interface.
     - Renames xt/leaktrace.t author_scripts/leaktrace.t
     - Adds aTHX_.
