@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.05 2013-06-18T07:02:26Z
     - Fixes memory leaks.
 
 0.04 2013-06-18T04:09:47Z
