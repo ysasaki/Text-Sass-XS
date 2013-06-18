@@ -7,11 +7,9 @@ sub new {
     my ( $self, %args ) = @_;
     $self->SUPER::new(
         %args,
-        c_source => ['libsass'],
-        config   => {
-            cc => 'g++',
-            ld => 'g++',
-        }
+        c_source             => ['libsass'],
+        extra_compiler_flags => [ '-x', 'c++' ],
+        extra_linker_flags   => ['-lstdc++'],
     );
 }
 
