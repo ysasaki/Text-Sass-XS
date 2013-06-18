@@ -64,10 +64,10 @@ static void set_options(pTHX_ void* context, HV* options) {
         ctx->options = default_options;
     }
     else {
-        ctx->options.output_style    = hv_fetch_iv(options, "output_style");
-        ctx->options.source_comments = hv_fetch_iv(options, "source_comments");
-        ctx->options.include_paths   = hv_fetch_pv(options, "include_paths");
-        ctx->options.image_path      = hv_fetch_pv(options, "image_path");
+        ctx->options.output_style    = hv_fetch_iv(aTHX_ options, "output_style");
+        ctx->options.source_comments = hv_fetch_iv(aTHX_ options, "source_comments");
+        ctx->options.include_paths   = hv_fetch_pv(aTHX_ options, "include_paths");
+        ctx->options.image_path      = hv_fetch_pv(aTHX_ options, "image_path");
     }
 }
 
@@ -99,7 +99,7 @@ PREINIT:
 INIT:
     context->source_string = source_string;
     context->output_string = output_string;
-    set_options(context, options);
+    set_options(aTHX_ context, options);
 CODE:
     RETVAL = (HV*)sv_2mortal((SV*)newHV());
     sass_compile(context);
@@ -123,7 +123,7 @@ PREINIT:
 INIT:
     context->input_path    = input_path;
     context->output_string = output_string;
-    set_options(context, options);
+    set_options(aTHX_ context, options);
 CODE:
     RETVAL = (HV*)sv_2mortal((SV*)newHV());
     sass_compile_file(context);
