@@ -76,6 +76,14 @@ Text::Sass::XS - Perl Binding for libsass
 
 
 
+    # Text::Sass compatible Interface
+    my $sass = Text::Sass::XS->new(%options);
+    my $css = $sass->scss2css($source);
+
+    # sass2css and css2sass are implemented by Text::Sass
+    my $css  = $sass->sass2css($source);
+    my $scss = $sass->css2sass($css);
+
 # DESCRIPTION
 
 Text::Sass::XS is a Perl Binding for libsass.
@@ -112,6 +120,24 @@ Text::Sass::XS is a Perl Binding for libsass.
         $sass->options->{include_paths} = ['/path/to/assets'];
 
     Allows you to inspect or change the options after a call to `new`.
+
+- `scss2css(source_code)`
+
+        $css = $sass->scss2css("scss souce code");
+
+    Same as `compile`.
+
+- `sass2css(source_code)`
+
+        $css = $sass->compile("sass source code");
+
+    Wrapper method of `Text::Sass#sass2css`.
+
+- `css2sass(source_code)`
+
+        $css = $sass->css2sass("css source code");
+
+    Wrapper method of `Text::Sass#css2sass`.
 
 # FUNCTIONAL INTERFACE
 

@@ -139,6 +139,31 @@ sub compile_file {
     }
 }
 
+# For Text::Sass Compatibility
+sub scss2css { shift->compile(@_) }
+
+sub sass2css {
+    my $self = shift;
+    $self->_require_pp;
+    Text::Sass->new->sass2css(@_);
+}
+
+sub css2sass {
+    my $self = shift;
+    $self->_require_pp;
+    Text::Sass->new->css2sass(@_);
+}
+
+sub _require_pp {
+    return if $INC{"Text/Sass.pm"};
+    local $@;
+    eval 'require Text::Sass;';
+    if ($@) {
+        Carp::croak
+            "Cannot load Text::Sass. If you want to use css2sass or sass2css method, you need to install Text::Sass first.";
+    }
+}
+
 1;
 __END__
 
@@ -219,6 +244,14 @@ Text::Sass::XS - Perl Binding for libsass
   print $css;
 
 
+  # Text::Sass compatible Interface
+  my $sass = Text::Sass::XS->new(%options);
+  my $css = $sass->scss2css($source);
+
+  # sass2css and css2sass are implemented by Text::Sass
+  my $css  = $sass->sass2css($source);
+  my $scss = $sass->css2sass($css);
+
 =head1 DESCRIPTION
 
 Text::Sass::XS is a Perl Binding for libsass.
@@ -257,6 +290,24 @@ there is an error it will C<croak()>.
   $sass->options->{include_paths} = ['/path/to/assets'];
 
 Allows you to inspect or change the options after a call to C<new>.
+
+=item C<scss2css(source_code)>
+
+  $css = $sass->scss2css("scss souce code");
+
+Same as C<compile>.
+
+=item C<sass2css(source_code)>
+
+  $css = $sass->compile("sass source code");
+
+Wrapper method of C<Text::Sass#sass2css>.
+
+=item C<css2sass(source_code)>
+
+  $css = $sass->css2sass("css source code");
+
+Wrapper method of C<Text::Sass#css2sass>.
 
 =back
 
