@@ -101,7 +101,7 @@ INIT:
     context->output_string = output_string;
     set_options(context, options);
 CODE:
-    RETVAL = newHV();
+    RETVAL = (HV*)sv_2mortal((SV*)newHV());
     sass_compile(context);
     hv_store_text_string(RETVAL, "output_string", context->output_string);
     hv_store_text_string(RETVAL, "error_message", context->error_message);
@@ -125,7 +125,7 @@ INIT:
     context->output_string = output_string;
     set_options(context, options);
 CODE:
-    RETVAL = newHV();
+    RETVAL = (HV*)sv_2mortal((SV*)newHV());
     sass_compile_file(context);
     hv_store_text_string(RETVAL, "output_string", context->output_string);
     hv_store_text_string(RETVAL, "error_message", context->error_message);

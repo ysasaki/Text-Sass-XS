@@ -6,5 +6,9 @@ on 'test' => sub {
 };
 
 on 'configure' => sub {
-    requires 'ExtUtils::CBuilder' => '0.28';
+    requires 'ExtUtils::CBuilder', '0.28';
+};
+
+on 'develop' => sub {
+    requires 'Test::LeakTrace', '0.14';
 };

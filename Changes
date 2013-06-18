@@ -1,6 +1,7 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+    - Fixes memory leaks.
 
 0.04 2013-06-18T04:09:47Z
     - Adds ExtUtils::CBuilder to dependencies.
