@@ -5,6 +5,9 @@ use Test::More;
 use Text::Sass::XS qw(:all);
 
 subtest 'compile with options' => sub {
+    plan skip_all => "Some how \@import didn't support on Windows"
+        if $^O =~ /MSWin/;
+
     my $sass = <<'SASS';
 @import "red";
 @import "green";
@@ -36,6 +39,35 @@ SASS
 .content-navigation{color:#ff1111;border-color:#3bbfce;background:url("/images/apple.png");}.border{color:#008000;padding:8px;margin:8px;}
 CSS
 };
+
+subtest 'compile with options - no import syntax' => sub {
+    my $sass = <<'SASS';
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  background: image-url("apple.png");
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+}
+SASS
+
+    my $options = {
+        output_style    => SASS_STYLE_COMPRESSED,
+        source_comments => SASS_SOURCE_COMMENTS_NONE,
+        include_paths   => [],
+        image_path      => '/images',
+    };
+    my $css = sass_compile( $sass, $options );
+    is $css, <<'CSS';
+.content-navigation{border-color:#3bbfce;background:url("/images/apple.png");}.border{padding:8px;margin:8px;}
+CSS
+};
+
 
 subtest 'compile without options' => sub {
     my $sass = <<'SASS';

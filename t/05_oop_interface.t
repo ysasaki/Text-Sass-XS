@@ -24,6 +24,9 @@ EOM
     };
 
     subtest 'with options' => sub {
+        plan skip_all => "Some how \@import didn't support on Windows"
+            if $^O =~ /MSWin/;
+
         my $source = <<'EOM';
 @import "red";
 

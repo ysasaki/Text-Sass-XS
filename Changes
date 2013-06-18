@@ -4,6 +4,7 @@ Revision history for Perl extension Text-Sass-XS
     - Adds Text::Sass compatible interface.
     - Renames xt/leaktrace.t author_scripts/leaktrace.t
     - Adds aTHX_.
+    - Skips some tests which don't work on MSWin.
 
 0.05 2013-06-18T07:02:26Z
     - Fixes memory leaks.
