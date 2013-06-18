@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.04 2013-06-18T04:09:47Z
     - Adds ExtUtils::CBuilder to dependencies.
     - Changes compiler and linker flags.
 
