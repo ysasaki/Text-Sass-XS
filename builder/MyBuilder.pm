@@ -13,20 +13,16 @@ sub new {
     );
 }
 
-# Copy from Module::Build::Pluggable::XSUtil
-sub HOOK_configure {
+sub compile_c {
     my $self = shift;
 
-    # c++ options
-    if ( $self->{'c++'} ) {
-        require ExtUtils::CBuilder;
-        my $cbuilder = ExtUtils::CBuilder->new( quiet => 1 );
-        $cbuilder->have_cplusplus or do {
-            warn
-                "This environment does not have a C++ compiler(OS unsupported)\n";
-            exit 0;
-        };
-    }
-}
+    # This logic is copied from M::B::Pluggable::XSUtil
+    unless ($self->cbuilder->have_cplusplus) {
+        warn
+            "This environment does not have a C++ compiler(OS unsupported)\n";
+        exit 0;
+    };
 
+    $self->SUPER::compile_c(@_);
+}
 1;
