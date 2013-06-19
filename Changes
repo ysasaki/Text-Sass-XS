@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.07 2013-06-19T03:01:52Z
     - Fixes c++ compiler check.
 
 0.06 2013-06-18T09:23:39Z
