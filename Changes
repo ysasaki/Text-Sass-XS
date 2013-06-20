@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.09 2013-06-20T09:42:51Z
     - Adds some definitions to .xs suggested by ppport.h
     - Removes ppport.h and creates ppport.h on build time.
     - Updates dependencies.
