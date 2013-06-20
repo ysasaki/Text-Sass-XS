@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.08 2013-06-20T02:14:21Z
     - Uses base.pm instead of parent.pm in builder/MyBuilder.pm.
 
 0.07 2013-06-19T03:01:52Z
