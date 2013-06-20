@@ -11,6 +11,8 @@ extern "C" {
 } /* extern "C" */
 #endif
 
+#define NEED_newCONSTSUB
+#define NEED_sv_2pv_flags
 #define NEED_newSVpvn_flags
 #include "ppport.h"
 #include "sass_interface.h"
