@@ -8,7 +8,7 @@ use File::Spec;
 sub new {
     my ( $self, %args ) = @_;
 
-    print "Generating ppport.h\n";
+    print "Writing ppport.h\n";
     Devel::PPPort::WriteFile(
         File::Spec->catfile(qw/lib Text Sass ppport.h/) );
 
