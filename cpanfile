@@ -10,6 +10,11 @@ on 'test' => sub {
 };
 
 on 'configure' => sub {
+    requires 'Devel::PPPort', '3.20';
+};
+
+on 'build' => sub {
+    requires 'Devel::PPPort',      '3.20';
     requires 'ExtUtils::CBuilder', '0.28';
 };
 

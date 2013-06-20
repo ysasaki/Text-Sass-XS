@@ -26,11 +26,17 @@
       ]
    },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Devel::PPPort" : "3.20",
+            "ExtUtils::CBuilder" : "0.28"
+         }
+      },
       "configure" : {
          "requires" : {
             "CPAN::Meta" : "0",
             "CPAN::Meta::Prereqs" : "0",
-            "ExtUtils::CBuilder" : "0.28",
+            "Devel::PPPort" : "3.20",
             "Module::Build" : "0.38"
          }
       },
