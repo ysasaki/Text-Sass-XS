@@ -26,6 +26,11 @@
       ]
    },
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Devel::PPPort" : "0"
+         }
+      },
       "configure" : {
          "requires" : {
             "CPAN::Meta" : "0",

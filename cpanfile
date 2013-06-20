@@ -13,6 +13,10 @@ on 'configure' => sub {
     requires 'ExtUtils::CBuilder', '0.28';
 };
 
+on 'build' => sub {
+    requires 'Devel::PPPort';
+};
+
 on 'develop' => sub {
     requires 'Test::LeakTrace', '0.14';
 };

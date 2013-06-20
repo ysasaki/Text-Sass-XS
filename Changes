@@ -2,6 +2,7 @@ Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
     - Adds some definitions to .xs suggested by ppport.h
+    - Removes ppport.h and creates ppport.h on build time.
 
 0.08 2013-06-20T02:14:21Z
     - Uses base.pm instead of parent.pm in builder/MyBuilder.pm.
