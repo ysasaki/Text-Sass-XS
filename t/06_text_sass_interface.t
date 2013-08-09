@@ -17,7 +17,7 @@ SCSS
 
     my $sass = Text::Sass::XS->new;
     my $css  = $sass->scss2css($source);
-    is $css, ".body{color:#ff1111;}\n";
+    is $css, ".body {color:#ff1111;}";
 };
 
 subtest 'sass' => sub {

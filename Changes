@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+    - Updates libsass from 0432e9f to 7779ab5. This updating contains
+      an incompatible change about the output format of css.
 
 0.09 2013-06-20T09:42:51Z
     - Adds some definitions to .xs suggested by ppport.h

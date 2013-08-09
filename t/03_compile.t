@@ -35,9 +35,7 @@ SASS
         image_path      => '/images',
     };
     my $css = sass_compile( $sass, $options );
-    is $css, <<'CSS';
-.content-navigation{color:#ff1111;border-color:#3bbfce;background:url("/images/apple.png");}.border{color:#008000;padding:8px;margin:8px;}
-CSS
+    is $css, '.content-navigation {color:#ff1111;border-color:#3bbfce;background:url("/images/apple.png");}.border {color:#008000;padding:8px;margin:8px;}';
 };
 
 subtest 'compile with options - no import syntax' => sub {
@@ -63,9 +61,7 @@ SASS
         image_path      => '/images',
     };
     my $css = sass_compile( $sass, $options );
-    is $css, <<'CSS';
-.content-navigation{border-color:#3bbfce;background:url("/images/apple.png");}.border{padding:8px;margin:8px;}
-CSS
+    is $css, '.content-navigation {border-color:#3bbfce;background:url("/images/apple.png");}.border {padding:8px;margin:8px;}';
 };
 
 
@@ -85,9 +81,7 @@ $margin: 16px;
 SASS
 
     my $css = sass_compile($sass);
-    is $css, <<'CSS';
-.content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}
-CSS
+    is $css, '.content-navigation {border-color:#3bbfce;}.border {padding:8px;margin:8px;}';
 };
 
 done_testing;

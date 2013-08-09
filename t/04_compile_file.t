@@ -16,13 +16,13 @@ my $options = {
 };
 
 my $css = sass_compile_file( $sass, $options );
-is $css, <<'CSS', 'compile_file with options';
-.content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}
-CSS
+my $output
+    = '.content-navigation {border-color:#3bbfce;}.border {padding:8px;margin:8px;}';
+is $css, $output, 'compile_file with options';
 
 $css = sass_compile_file($sass);
-is $css, <<'CSS', 'compile_file without options';
-.content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}
-CSS
+$output
+    = '.content-navigation {border-color:#3bbfce;}.border {padding:8px;margin:8px;}';
+is $css, $output, 'compile_file without options';
 
 done_testing;

@@ -20,6 +20,23 @@ sub new {
     );
 }
 
+sub ACTION_code {
+    my ($self) = @_;
+
+    # libsass@7779ab5 includes lots of files that are not required.
+
+    my $p = $self->{properties};
+
+    my ($dir) = @{delete $p->{c_source}};
+    push @{$p->{include_dirs}}, $dir;
+
+    foreach my $file (glob("$dir/*.cpp")) {
+        push @{$p->{objects}}, $self->compile_c($file);
+    }
+
+    $self->SUPER::ACTION_code();
+}
+
 sub compile_c {
     my $self = shift;
 

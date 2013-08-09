@@ -16,7 +16,7 @@ $red: #ff1111;
   color: $red;
 }
 EOM
-        my $compiled = ".something{color:#ff1111;}\n";
+        my $compiled = ".something {color:#ff1111;}";
 
         my $sass = new_ok 'Text::Sass::XS';
         my $css  = $sass->compile($source);
@@ -48,7 +48,7 @@ EOM
 
         my $css = $sass->compile($source);
         is $css,
-            ".something{color:#ff1111;background:url(\"/images/apple.png\");}\n";
+            ".something {color:#ff1111;background:url(\"/images/apple.png\");}";
     };
 };
 
@@ -58,9 +58,9 @@ subtest 'compile_file' => sub {
     subtest 'no options' => sub {
         my $sass = new_ok 'Text::Sass::XS';
         my $css  = $sass->compile_file($sass_file);
-        is $css, <<'CSS', 'compile_file with options';
-.content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}
-CSS
+        my $output
+            = '.content-navigation {border-color:#3bbfce;}.border {padding:8px;margin:8px;}';
+        is $css, $output, 'compile_file with options';
     };
 
     subtest 'with options' => sub {
@@ -73,9 +73,9 @@ CSS
             ];
 
         my $css = $sass->compile_file($sass_file);
-        is $css, <<'CSS', 'compile_file with options';
-.content-navigation{border-color:#3bbfce;}.border{padding:8px;margin:8px;}
-CSS
+        my $output
+            = '.content-navigation {border-color:#3bbfce;}.border {padding:8px;margin:8px;}';
+        is $css, $output, 'compile_file with options';
     };
 
 };

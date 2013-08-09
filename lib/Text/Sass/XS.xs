@@ -57,11 +57,12 @@ static char* hv_fetch_pv(pTHX_ HV* dict, const char* key) {
 static void set_options(pTHX_ void* context, HV* options) {
     struct sass_context* ctx = (struct sass_context*) context;
     if ( options == NULL ) {
+        const char* empty_string = "";
         struct sass_options default_options = {
             SASS_STYLE_COMPRESSED,
             SASS_SOURCE_COMMENTS_NONE,
-            NULL,
-            NULL
+            (char*) empty_string,
+            (char*) empty_string,
         };
         ctx->options = default_options;
     }

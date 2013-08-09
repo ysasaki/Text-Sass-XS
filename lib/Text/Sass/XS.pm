@@ -72,6 +72,11 @@ sub _normalize_options {
     {
         $options{include_paths} = join ':', @{ $options{include_paths} };
     }
+    else {
+        $options{include_paths} = "";
+    }
+
+    $options{image_path} = "" unless $options{image_path};
 
     return %options;
 }
