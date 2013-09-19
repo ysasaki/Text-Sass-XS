@@ -204,14 +204,14 @@ For `$options->{source_comments}`.
 
 # LICENSE
 
-## Text::Sass::XS
+Text::Sass::XS
 
 Copyright (C) 2013 Yoshihiro Sasaki.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-## libsass
+libsass
 
 Copyright (C) 2012 by Hampton Catlin.
 

@@ -401,14 +401,14 @@ L<CSS::Sass> - Yet another libsass binding.
 
 =head1 LICENSE
 
-=head2 Text::Sass::XS
+Text::Sass::XS
 
 Copyright (C) 2013 Yoshihiro Sasaki.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=head2 libsass
+libsass
 
 Copyright (C) 2012 by Hampton Catlin.
 

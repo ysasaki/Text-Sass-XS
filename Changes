@@ -1,6 +1,7 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+    - Updates LICENSE for kwalitee.
 
 0.10 2013-08-09T09:37:02Z
     - Updates libsass from 0432e9f to 7779ab5. This updating contains
