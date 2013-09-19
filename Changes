@@ -1,6 +1,8 @@
 Revision history for Perl extension Text-Sass-XS
 
 {{$NEXT}}
+
+0.11 2013-09-19T05:34:42Z
     - Updates LICENSE for kwalitee.
 
 0.10 2013-08-09T09:37:02Z
